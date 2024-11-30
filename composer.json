@@ -1,0 +1,52 @@
+{
+    "name": "simonankele/laravel-query-pipelines",
+    "require": {
+        "php": "^8.3.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.5",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "laravel/pint": "^1.18",
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^9.6"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "SimonAnkele\\LaravelQueryPipelines\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "simonankele",
+            "email": "kontakt@simonankele.de"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SimonAnkele\\LaravelQueryPipelines\\LaravelQueryPipelinesServiceProvider"
+            ],
+            "aliases": {
+                "LaravelQueryPipelines": "SimonAnkele\\LaravelQueryPipelines\\Facades\\LaravelQueryPipelines"
+            }
+        }
+    }
+}
