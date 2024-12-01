@@ -14,7 +14,8 @@ class TestModelFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->name(),
+            'description' => $this->faker->text(100),
             'type_flag' => $this->faker->randomElement([1, 2, 4]),
             'is_visible' => $this->faker->boolean,
             'created_at' => $this->faker->dateTime,
