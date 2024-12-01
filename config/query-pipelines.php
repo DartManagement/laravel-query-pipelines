@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPositionEnum;
+use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
 
 return [
     // key to detect param to filter
     'detect_key' => env('PIPELINE_QUERY_COLLECTION_DETECT_KEY', ''),
 
     // Allow the default wildcard position for relative filters to be controlled via .env.
-    'relative_wildcard_position' => WildcardPositionEnum::tryFrom(
+    'relative_wildcard_position' => WildcardPosition::tryFrom(
         env('PIPELINE_QUERY_COLLECTION_WILDCARD_POSITION', 'both')
     ),
 

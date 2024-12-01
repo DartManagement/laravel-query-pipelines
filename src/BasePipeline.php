@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Filters;
+namespace SimonAnkele\LaravelQueryPipelines;
 
 use Closure;
 use Illuminate\Database\Eloquent\Builder;

@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Filters;
+namespace SimonAnkele\LaravelQueryPipelines\Filters;
 
-use App\Enums\QueryPipeline\WildcardPosition;
+use SimonAnkele\LaravelQueryPipelines\BaseFilter;
+use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
 
 class LikeFilter extends BaseFilter
 {
