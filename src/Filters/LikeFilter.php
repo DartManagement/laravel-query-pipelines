@@ -5,21 +5,21 @@ declare(strict_types=1);
 namespace SimonAnkele\LaravelQueryPipelines\Filters;
 
 use SimonAnkele\LaravelQueryPipelines\BaseFilter;
+use SimonAnkele\LaravelQueryPipelines\Enums\WhereType;
 use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
 
 class LikeFilter extends BaseFilter
 {
-    private bool $all = false;
+    private WhereType $whereType = WhereType::ANY;
 
     private WildcardPosition $wildcardPosition = WildcardPosition::BOTH;
 
     /**
      * @param  array<string>  ...$columns
+     * @noinspection PhpMissingParentConstructorInspection
      */
     public function __construct(array $columns)
     {
-        parent::__construct();
-
         $this->columns = $columns;
     }
 
@@ -30,7 +30,7 @@ class LikeFilter extends BaseFilter
 
     public function all(): self
     {
-        $this->all = true;
+        $this->whereType = WhereType::ALL;
 
         return $this;
     }
@@ -44,7 +44,7 @@ class LikeFilter extends BaseFilter
 
     protected function apply(): static
     {
-        $this->all
+        $this->whereType === WhereType::ALL
             ? $this->useWhereAll()
             : $this->useWhereAny();
 
@@ -53,12 +53,12 @@ class LikeFilter extends BaseFilter
 
     private function useWhereAny(): void
     {
-        $this->query->whereAny($this->columns, 'like', $this->resolveWildcard('Example'));
+        $this->query->whereAny($this->columns, 'like', $this->resolveWildcard($this->searchValue()));
     }
 
     private function useWhereAll(): void
     {
-        $this->query->whereAll($this->columns, 'like', $this->resolveWildcard('Example'));
+        $this->query->whereAll($this->columns, 'like', $this->resolveWildcard($this->searchValue()));
     }
 
     private function resolveWildcard(string $value): string
