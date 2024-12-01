@@ -1,0 +1,56 @@
+name: Laravel Boilerplate
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  push-to-main-branch:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+          tools: composer:v2
+          coverage: xdebug
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v4
+#        with:
+#          # Version Spec of the version to use in SemVer notation.
+#          # It also admits such aliases as lts/*, latest, nightly and canary builds
+#          # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
+#          node-version: '22.x'
+#
+#      - name: Build Laravel Frontend
+#        run: |
+#          npm install
+#          npm run build
+#
+#      - name: Prepare Laravel Application
+#        run: |
+#          cp .env.ci .env
+#          php artisan key:generate
+#
+#      - name: Runs Pest Tests
+#        run: ./vendor/bin/pest --ci
+#
+#      - name: Runs Larastan code analysis
+#        run: ./vendor/bin/phpstan
+#
+#      - name: Runs Laravel Pint
+#        run: ./vendor/bin/pint --test
