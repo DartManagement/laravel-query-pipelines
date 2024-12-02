@@ -54,12 +54,4 @@ abstract class TestCase extends Orchestra
             $table->unsignedInteger('related_model_id');
         });
     }
-
-    public function getEnvironmentSetUp($app)
-    {
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_pipeline-query-collection_table.php.stub';
-        $migration->up();
-        */
-    }
 }

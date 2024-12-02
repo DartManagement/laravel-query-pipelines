@@ -45,11 +45,6 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
-{
-    // ..
-}
-
 function injectRequest(array $query): void
 {
     app(Request::class)->merge($query);

@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 use DartManagement\LaravelQueryPipelines\Traits\Filterable;
 use Tests\Factories\TestModelFactory;
 
+/**
+ * @method static filter(array $array)
+ */
 class TestModel extends Model
 {
     use Filterable;
@@ -18,7 +21,7 @@ class TestModel extends Model
     /**
      * Create a new factory instance for the model.
      */
-    protected static function newFactory(): TestModelFactory|Factory
+    protected static function newFactory(): Factory
     {
         return TestModelFactory::new();
     }
