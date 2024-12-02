@@ -3,6 +3,8 @@
 
 This package contains a collection of filters that can be used with Laravel Pipeline and is inspires by [l3aro/pipeline-query-collection](https://github.com/l3aro/pipeline-query-collection).
 
+### This package is always expanded when I need additional filters.
+
 Search for the value of the query parameter 'name' in the table column 'name'.
 
 ```php
@@ -103,9 +105,6 @@ $users = Users::query()->filter([
 * [Usage](#usage)
     * [Preparing your model](#preparing-your-model)
 * [Testing](#testing)
-* [Contributing](#contributing)
-* [Security Vulnerabilities](#security-vulnerabilities)
-* [Credits](#credits)
 * [License](#license)
 
 ## Installation

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
+use DartManagement\LaravelQueryPipelines\Enums\WildcardPosition;
 
 return [
     // key to detect param to filter
