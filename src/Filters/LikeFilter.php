@@ -16,10 +16,11 @@ class LikeFilter extends BaseFilter
 
     /**
      * @param  array<string>  ...$columns
-     * @noinspection PhpMissingParentConstructorInspection
      */
     public function __construct(array $columns)
     {
+        parent::__construct();
+
         $this->columns = $columns;
     }
 

@@ -16,7 +16,7 @@ abstract class BasePipeline
      */
     protected Builder $query;
 
-    protected Request $request;
+    protected ?Request $request = null;
 
     public function __construct()
     {
@@ -27,7 +27,6 @@ abstract class BasePipeline
 
     /**
      * @param  Builder<Model>  $query
-     *
      * @return Builder<Model>
      */
     abstract public function handle(Builder $query, Closure $next): Builder;

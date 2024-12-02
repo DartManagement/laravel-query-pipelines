@@ -34,6 +34,7 @@ jobs:
       - name: Run Pest Mutation Tests
         run: ./vendor/bin/pest --ci --mutate
 
+
       - name: Generate test coverage badge
         uses: timkrase/phpunit-coverage-badge@v1.2.0
         with:

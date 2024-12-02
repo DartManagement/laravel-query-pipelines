@@ -20,9 +20,13 @@ abstract class BaseFilter extends BasePipeline
 
     private mixed $value;
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * @param  Builder<Model>  $query
-     *
      * @return Builder<Model>
      */
     #[Override]
