@@ -37,7 +37,27 @@
         }
     },
     "scripts": {
-
+        "pint": [
+            "./vendor/bin/pint -v"
+        ],
+        "pint-dirty": [
+            "./vendor/bin/pint --dirty"
+        ],
+        "pint-repair": [
+            "./vendor/bin/pint --repair"
+        ],
+        "pint-test": [
+            "./vendor/bin/pint --test"
+        ],
+        "larastan": [
+            "./vendor/bin/phpstan analyse"
+        ],
+        "test": [
+            "php artisan test"
+        ],
+        "test-mutate": [
+            "php artisan test --mutate"
+        ]
     },
     "extra": {
         "laravel": {

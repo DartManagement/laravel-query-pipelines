@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace DartManagement\LaravelQueryPipelines\Filters;
 
+use Carbon\Exceptions\InvalidTypeException;
 use DartManagement\LaravelQueryPipelines\BaseFilter;
 use DartManagement\LaravelQueryPipelines\Enums\WhereType;
 use DartManagement\LaravelQueryPipelines\Enums\WildcardPosition;
+use InvalidArgumentException;
 
 class LikeFilter extends BaseFilter
 {
@@ -62,11 +64,19 @@ class LikeFilter extends BaseFilter
         $this->query->whereAll($this->columns, 'like', $this->resolveWildcard($this->searchValue()));
     }
 
-    private function resolveWildcard(string $value): string
+    private function resolveWildcard(mixed $value): string
     {
+        if ($value === null) {
+            throw new InvalidArgumentException('Request object is not set.');
+        }
+
+        if ( !(gettype($value) === 'string' || gettype($value) === 'integer' || gettype($value) === 'double') ) {
+            throw new InvalidTypeException('Value for wildcard not accepted.');
+        }
+
         return match ($this->wildcardPosition) {
-            WildcardPosition::RIGHT => "$value%",
-            WildcardPosition::LEFT => "%$value",
+            WildcardPosition::RIGHT => "{$value}",
+            WildcardPosition::LEFT => "%{$value}",
             default => "%$value%",
         };
     }

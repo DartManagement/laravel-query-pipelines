@@ -34,6 +34,11 @@ jobs:
       - name: Run Pest Mutation Tests
         run: ./vendor/bin/pest --ci --mutate
 
+      - name: Run Larastan
+        run: ./vendor/bin/phpstan analyse
+
+      - name: Run Laravel Pint
+        run: ./vendor/bin/pint
 
       - name: Generate test coverage badge
         uses: timkrase/phpunit-coverage-badge@v1.2.0
@@ -41,6 +46,8 @@ jobs:
           coverage_badge_path: 'badge-coverage.svg'
           push_badge: true
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+
 
 #      - name: Set up Node.js
 #        uses: actions/setup-node@v4

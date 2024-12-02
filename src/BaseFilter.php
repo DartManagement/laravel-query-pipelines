@@ -7,6 +7,7 @@ namespace DartManagement\LaravelQueryPipelines;
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use InvalidArgumentException;
 use Override;
 
 abstract class BaseFilter extends BasePipeline
@@ -55,6 +56,10 @@ abstract class BaseFilter extends BasePipeline
 
     protected function searchValue(): mixed
     {
+        if ($this->request === null) {
+            throw new InvalidArgumentException('Request object is not set.');
+        }
+
         return $this->value ?? $this->request->input($this->queryParameter);
     }
 }
