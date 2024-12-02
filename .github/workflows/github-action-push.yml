@@ -28,10 +28,19 @@ jobs:
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
-      - name: Tests
+      - name: Run Pest Unit Tests
         run: ./vendor/bin/pest --ci
-      - name: Tests
+
+      - name: Run Pest Mutation Tests
         run: ./vendor/bin/pest --ci --mutate
+
+      - name: Generate test coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: 'badge-coverage.svg'
+          push_badge: true
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+
 #      - name: Set up Node.js
 #        uses: actions/setup-node@v4
 #        with:
