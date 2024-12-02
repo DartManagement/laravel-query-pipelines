@@ -30,6 +30,8 @@ jobs:
 
       - name: Tests
         run: ./vendor/bin/pest --ci
+      - name: Tests
+        run: ./vendor/bin/pest --ci --mutate
 #      - name: Set up Node.js
 #        uses: actions/setup-node@v4
 #        with:
