@@ -47,6 +47,7 @@ class LikeFilter extends BaseFilter
 
     protected function apply(): static
     {
+
         $this->whereType === WhereType::ALL
             ? $this->useWhereAll()
             : $this->useWhereAny();
@@ -75,7 +76,7 @@ class LikeFilter extends BaseFilter
         }
 
         return match ($this->wildcardPosition) {
-            WildcardPosition::RIGHT => "{$value}",
+            WildcardPosition::RIGHT => "{$value}%",
             WildcardPosition::LEFT => "%{$value}",
             default => "%$value%",
         };
