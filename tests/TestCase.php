@@ -9,7 +9,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Orchestra\Testbench\TestCase as Orchestra;
-use SimonAnkele\LaravelQueryPipelines\LaravelQueryPipelinesServiceProvider;
+use DartManagement\LaravelQueryPipelines\LaravelQueryPipelinesServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
@@ -27,7 +27,7 @@ abstract class TestCase extends Orchestra
         $this->setUpDatabase($this->app);
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'SimonAnkele\\LaravelQueryPipelines\\Tests\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'DartManagement\\LaravelQueryPipelines\\Tests\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

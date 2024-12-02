@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimonAnkele\LaravelQueryPipelines;
+namespace DartManagement\LaravelQueryPipelines;
 
 use Illuminate\Support\ServiceProvider;
 

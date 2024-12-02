@@ -4,12 +4,12 @@
 
 declare(strict_types=1);
 
-use SimonAnkele\LaravelQueryPipelines\BaseFilter;
-use SimonAnkele\LaravelQueryPipelines\BasePipeline;
-use SimonAnkele\LaravelQueryPipelines\Enums\WhereType;
-use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
-use SimonAnkele\LaravelQueryPipelines\Filters\LikeFilter;
-use SimonAnkele\LaravelQueryPipelines\Traits\Filterable;
+use DartManagement\LaravelQueryPipelines\BaseFilter;
+use DartManagement\LaravelQueryPipelines\BasePipeline;
+use DartManagement\LaravelQueryPipelines\Enums\WhereType;
+use DartManagement\LaravelQueryPipelines\Enums\WildcardPosition;
+use DartManagement\LaravelQueryPipelines\Filters\LikeFilter;
+use DartManagement\LaravelQueryPipelines\Traits\Filterable;
 use Tests\Models\TestModel;
 
 mutates([LikeFilter::class, BaseFilter::class, BasePipeline::class, Filterable::class, WhereType::class, WildcardPosition::class]);

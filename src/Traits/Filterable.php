@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimonAnkele\LaravelQueryPipelines\Traits;
+namespace DartManagement\LaravelQueryPipelines\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Pipeline;

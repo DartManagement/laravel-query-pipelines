@@ -7,7 +7,7 @@ namespace Tests\Models;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use SimonAnkele\LaravelQueryPipelines\Traits\Filterable;
+use DartManagement\LaravelQueryPipelines\Traits\Filterable;
 use Tests\Factories\TestModelFactory;
 
 class TestModel extends Model

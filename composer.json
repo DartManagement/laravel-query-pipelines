@@ -1,5 +1,5 @@
 {
-    "name": "simonankele/laravel-query-pipelines",
+    "name": "dart-management/laravel-query-pipelines",
     "require": {
         "php": "^8.3.0"
     },
@@ -15,7 +15,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "SimonAnkele\\LaravelQueryPipelines\\": "src/"
+            "DartManagement\\LaravelQueryPipelines\\": "src/"
         }
     },
     "autoload-dev": {
@@ -25,8 +25,8 @@
     },
     "authors": [
         {
-            "name": "simonankele",
-            "email": "kontakt@simonankele.de"
+            "name": "Dart Management",
+            "email": "github@dart-management.de"
         }
     ],
     "config": {
@@ -42,11 +42,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SimonAnkele\\LaravelQueryPipelines\\LaravelQueryPipelinesServiceProvider"
-            ],
-            "aliases": {
-                "LaravelQueryPipelines": "SimonAnkele\\LaravelQueryPipelines\\Facades\\LaravelQueryPipelines"
-            }
+                "DartManagement\\LaravelQueryPipelines\\LaravelQueryPipelinesServiceProvider"
+            ]
         }
     }
 }

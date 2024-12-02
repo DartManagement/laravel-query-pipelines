@@ -10,6 +10,6 @@ arch()
     ->not->toUse(['die', 'dd', 'dump']);
 
 arch()
-    ->expect('SimonAnkele\LaravelQueryPipelines')
+    ->expect('DartManagement\LaravelQueryPipelines')
     ->toUseStrictTypes()
     ->not->toUse(['die', 'dd', 'dump']);

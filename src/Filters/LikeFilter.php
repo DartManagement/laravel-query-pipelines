@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace SimonAnkele\LaravelQueryPipelines\Filters;
+namespace DartManagement\LaravelQueryPipelines\Filters;
 
-use SimonAnkele\LaravelQueryPipelines\BaseFilter;
-use SimonAnkele\LaravelQueryPipelines\Enums\WhereType;
-use SimonAnkele\LaravelQueryPipelines\Enums\WildcardPosition;
+use DartManagement\LaravelQueryPipelines\BaseFilter;
+use DartManagement\LaravelQueryPipelines\Enums\WhereType;
+use DartManagement\LaravelQueryPipelines\Enums\WildcardPosition;
 
 class LikeFilter extends BaseFilter
 {

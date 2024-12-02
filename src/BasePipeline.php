@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimonAnkele\LaravelQueryPipelines;
+namespace DartManagement\LaravelQueryPipelines;
 
 use Closure;
 use Illuminate\Database\Eloquent\Builder;

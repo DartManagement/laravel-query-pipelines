@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SimonAnkele\LaravelQueryPipelines\Enums;
+namespace DartManagement\LaravelQueryPipelines\Enums;
 
 enum WildcardPosition: string
 {
