@@ -1,3 +1,4 @@
+![Codecov](https://img.shields.io/codecov/c/github/DartManagement/laravel-query-pipelines)
 
 ## A query database collection for use with Laravel Pipeline
 
