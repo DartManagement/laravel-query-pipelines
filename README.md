@@ -91,6 +91,7 @@ Search for the value 'Laravel' in the table column 'name' with selected wildcard
 use DartManagement\LaravelQueryPipelines;
 use \LaravelQueryPipelines\Enums\WildcardPosition;
 
+// users?name=Laravel
 $users = Users::query()->filter([
     LikeFilter::columns('name')->wildcard(WildcardPosition::LEFT),
 ])
